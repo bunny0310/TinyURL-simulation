@@ -1,0 +1,33 @@
+#database settings
+
+#mongoDBConnection:
+#  credentials:
+#    username: "ikhurana"
+#    password: "ishaan123"
+#  seeds:
+#    - host: "cluster0.gc8z6.mongodb.net"
+#      port: 27017
+#  database: "url_shortening_service"
+
+mongoHost : localhost
+
+mongoPort : 27017
+mongoDB : url_shortening_service
+collectionName: urls
+
+# Logging settings.
+logging:
+  level: INFO
+  loggers:
+    io.dropwizard: DEBUG
+    org.eclipse.jetty.servlets: DEBUG
+    org.hibernate.SQL: ALL
+    com.udemy.LocationsApplication:
+      level: ALL,
+      additive: false
+      appenders:
+        - type: console
+          logFormat: "%red(CDR) [%magenta(%date)] [%thread] [%cyan(%logger{0})]: %message%n"
+  appenders:
+    - type: console
+      logFormat: "%highlight(%-5level) [%magenta(%date)] [%thread] [%cyan(%logger{0})]: %message%n"
